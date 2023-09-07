@@ -12,6 +12,13 @@ export default function page() {
         <p>$40</p>
         <p>1개</p>
       </div>
+      <Btn color={'red'}/>
     </div>
   );
-}
+};
+
+function Btn(props) {
+  return (
+    <button type="button" style={{backgroundColor: props.color}}>버튼</button>
+  )
+};
