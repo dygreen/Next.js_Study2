@@ -1,24 +1,17 @@
 import { connetDB } from "@/util/database";
-import Link from "next/link";
+import ListItem from "./ListItem";
 
 export default async function List() {
   const client = await connetDB;
   const db = client.db('forum');
   let result = await db.collection('post').find().toArray();
 
+  // server component 에서 client component 로 전달하는 props 를 일반 객체(plain object) 로 보내기 위함
+  // result = result.map(item => ({...item, _id: item._id.toString()}));
+
   return (
     <div className="list-bg">
-      {
-        result.map(data => (
-          <div className="list-item" key={data._id}>
-            <Link href={`/detail/${data._id.toString()}`}>
-              <h4>{data.title}</h4>
-            </Link>
-            <Link href={`/edit/${data._id.toString()}`}>✏️</Link>
-            <p>{data.content}</p>
-          </div>
-        ))
-      }
+      <ListItem result={result}/>
     </div>
   )
 }
