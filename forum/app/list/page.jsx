@@ -14,6 +14,7 @@ export default async function List() {
             <Link href={`/detail/${data._id.toString()}`}>
               <h4>{data.title}</h4>
             </Link>
+            <Link href={`/edit/${data._id.toString()}`}>✏️</Link>
             <p>{data.content}</p>
           </div>
         ))
