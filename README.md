@@ -7,3 +7,4 @@
 
 ### 2. forum
 : Mongo DB 연결하여 게시판 페이지 제작
+NextAuth 를 이용하여 회원 기능 구현
