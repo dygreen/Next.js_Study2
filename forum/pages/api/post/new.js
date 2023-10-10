@@ -1,4 +1,4 @@
-import { connetDB } from "@/util/database";
+import { connectDB } from "@/util/database";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]";
 
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     
     // DB 에러 예외 처리
     try {
-      const client = await connetDB;
+      const client = await connectDB;
       const db = client.db('forum');
       let result = await db.collection('post').insertOne(req.body);
       

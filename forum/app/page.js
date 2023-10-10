@@ -1,4 +1,4 @@
-import { connetDB } from "@/util/database"
+import { connectDB } from "@/util/database"
 
 // 페이지 단위 캐싱하기
 export const revalidate = 60; 
@@ -10,7 +10,7 @@ export const revalidate = 60;
 
 export default async function Home() {
 
-  const client = await connetDB;
+  const client = await connectDB;
   const db = client.db('forum');
   let result = await db.collection('post').find().toArray();
   // console.log(result);

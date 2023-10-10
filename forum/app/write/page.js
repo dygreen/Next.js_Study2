@@ -1,5 +1,10 @@
-export default function Write(){
-  return (
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
+
+export default async function Write() {
+  let session = await getServerSession(authOptions);
+
+  return session ? (
     <div className="p-20">
       <h4>글 작성</h4>
       <form action="/api/post/new" method="POST">
@@ -12,5 +17,7 @@ export default function Write(){
         <button type="submit">날짜 출력</button>
       </form> */}
     </div>
+  ) : (
+    <h4>로그인이 필요한 서비스입니다.</h4>
   )
 }

@@ -1,8 +1,8 @@
-import { connetDB } from "@/util/database";
+import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
 
 export default async function Edit(props) {
-  const client = await connetDB;
+  const client = await connectDB;
   const db = client.db('forum');
   let result = await db.collection('post').findOne({_id : new ObjectId(props.params.id)});
 

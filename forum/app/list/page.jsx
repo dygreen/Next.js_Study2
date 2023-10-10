@@ -1,4 +1,4 @@
-import { connetDB } from "@/util/database";
+import { connectDB } from "@/util/database";
 import ListItem from "./ListItem";
 
 // dynamic rendering 으로 바꾸기
@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 // * static 은 'force-static'
 
 export default async function List() {
-  const client = await connetDB;
+  const client = await connectDB;
   const db = client.db('forum');
   let result = await db.collection('post').find().toArray();
 
