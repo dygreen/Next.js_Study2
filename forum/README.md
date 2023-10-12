@@ -7,3 +7,4 @@
   - OAuth + session 방식 사용하기 : Github 소셜 로그인 (MongoDB adapter 설정)
   - 아이디/비번 + JWT 사용하기 : `bcrypt`, `Credentials provider` 설정
 - 관리자는 모든 글 삭제 가능
+- 게시글 댓글 기능 (조회/등록)
