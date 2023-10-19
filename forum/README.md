@@ -8,3 +8,4 @@
   - 아이디/비번 + JWT 사용하기 : `bcrypt`, `Credentials provider` 설정
 - 관리자는 모든 글 삭제 가능
 - 게시글 댓글 기능 (조회/등록)
+- `cookie` 를 이용한 다크모드 구현
